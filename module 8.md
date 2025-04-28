@@ -82,7 +82,7 @@ Algorithm:
 6.	End
  
 Program:
-
+```
 #include<stdio.h>
 #include<ctype.h>
 #include<string.h>
@@ -102,7 +102,7 @@ int main()
     printf("%d ",f[i]);
     }
 }
-
+```
 
 
 Output:
@@ -136,7 +136,7 @@ Free the memory allocated for each string in s Free the memory allocated for s
 7.	End
  
 Program:
-
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -187,7 +187,7 @@ int main()
 	return 0;
 }
 
-
+```
 
 Output:
 
@@ -216,7 +216,7 @@ Algorithm:
 7.	End
  
 Program:
-
+```
 #include<stdio.h>
 int main()
 {
@@ -236,7 +236,7 @@ printf("\n");
 }
 return 0;
 }
-
+```
 
 
 Output:
@@ -272,7 +272,7 @@ o	Call the square() function and display the result.
 5.	End.
 
 Program:
-
+```
 #include <stdio.h>
 void square();
 int main(){
@@ -286,7 +286,7 @@ void square(){
     float ans = a*a;
     printf("The square of %d is : %.2f",a,ans);
 }
-
+```
 
 
 Output:
