@@ -12,83 +12,19 @@ Algorithm:
 7.	Use the display function to visualize the stack's contents
  
 Program:
-```
-#include <stdio.h>
-#include <stdlib.h>
 
-#define MAX_SIZE 10 
-
-int stack[MAX_SIZE];
-int top = -1; 
-
-int isFull() {
-    return top == MAX_SIZE - 1;
+int stack[40],top,i; void display()
+{
+for(i=top;i>=0;i--)
+{
+printf("%d\n",stack[i]);
+}
 }
 
-int isEmpty() {
-    return top == -1;
-}
-
-void push(int element) {
-    if (isFull()) {
-        printf("Stack is full.\n");
-    } else {
-        top++;
-        stack[top] = element;
-        printf("%d pushed onto the stack.\n", element);
-    }
-}
-
-int pop() {
-    if (isEmpty()) {
-        printf("Stack is empty.\n");
-        return -1; 
-    } else {
-        int poppedElement = stack[top];
-        top--;
-        printf("%d popped from the stack.\n", poppedElement);
-        return poppedElement;
-    }
-}
-
-int peek() {
-    if (isEmpty()) {
-        printf("Stack is empty.\n");
-        return -1; 
-    } else {
-        printf("Top element of the stack is: %d\n", stack[top]);
-        return stack[top];
-    }
-}
-
-void displayStack() {
-    if (isEmpty()) {
-        printf("Stack is empty.\n");
-    } else {
-        printf("\nDisplaying the stack elements\n");
-        for (int i = top; i >= 0; i--) {
-            printf("%d\n", stack[i]);
-        }
-    }
-}
-
-int main() {
-    push(10);
-    push(20);
-    push(30);
-
-    displayStack();
-
-    peek();
-
-    displayStack();
-
-    return 0;
-}
-```
 Output:
 
-![exp no 11](https://github.com/user-attachments/assets/22168aa3-93f9-4167-a998-6474ad334e65)
+![image](https://github.com/user-attachments/assets/6bcb7d85-e740-497a-916d-c448f39f3c50)
+
 
 
 
@@ -106,71 +42,22 @@ Algorithm:
 4.	Call the push function as needed.
  
 Program:
-```
-#include <stdio.h>
-#include <stdlib.h>
-
-#define MAX_SIZE 10 
-
-float stack[MAX_SIZE];
-int top = -1; 
-
-int isFull() {
-    return top == MAX_SIZE - 1;
+int size=3,top=1; float stack[40];
+void push (float data)
+{
+if (top==size-1 )
+{
+printf("stack is full\n");
+}
+else
+{
+top ++; stack[top] = data;
+}
 }
 
-int isEmpty() {
-    return top == -1;
-}
-
-void push(float element) {
-    if (isFull()) {
-        printf("Stack is full.\n");
-    } else {
-        top++;
-        stack[top] = element;
-        printf("%.1f pushed onto the stack.\n", element);
-    }
-}
-
-int peek() {
-    if (isEmpty()) {
-        printf("Stack is empty.\n");
-        return -1; 
-    } else {
-        printf("Top element of the stack is: %.1f\n", stack[top]);
-        return stack[top];
-    }
-}
-
-void displayStack() {
-    if (isEmpty()) {
-        printf("Stack is empty.\n");
-    } else {
-        printf("\nDisplaying the stack elements\n");
-        for (int i = top; i >= 0; i--) {
-            printf("%.1f\n", stack[i]);
-        }
-    }
-}
-
-int main() {
-    push(10.5);
-    push(20.5);
-    push(30.5);
-
-    displayStack();
-
-    peek();
-
-    displayStack();
-
-    return 0;
-}
-```
 Output:
+![image](https://github.com/user-attachments/assets/dbd62d6f-c813-43b9-9f30-6c750b442de2)
 
-![exp no 12](https://github.com/user-attachments/assets/15d7100f-1e84-44ae-a492-ba0b8e23d9bd)
 
 
 
@@ -191,79 +78,24 @@ Algorithm:
 4.	Call the display function and perform other queue operations as needed.
  
 Program:
-```
-#include <stdio.h>
-#include <stdlib.h>
-
-#define MAX_SIZE 10 
-
-int queue[MAX_SIZE];
-int front = -1; 
-int rear = -1;  
-
-int isFull() {
-    return (rear == MAX_SIZE - 1);
+int queue[50], rear, front,i; void display()
+{
+if(front==-1)
+{
+printf("No elements to display");
+}
+else
+{
+for(i=front;i<=rear;i++)
+{
+printf("%d ",queue[i]);
+}
+}
 }
 
-int isEmpty() {
-    return (front == -1 && rear == -1);
-}
-int dequeue() {
-    if (isEmpty()) {
-        printf("Queue is empty.\n");
-        return -1; 
-    } else {
-        int dequeuedElement = queue[front];
-        front++;
-        if (front > rear) {
-            front = rear = -1; 
-        }
-        printf("%d dequeued from the queue.\n", dequeuedElement);
-        return dequeuedElement;
-    }
-}
-void enqueue(int element) {
-    if (isFull()) {
-        printf(" Queue is full.\n");
-    } else {
-        if (isEmpty()) {
-            front = 0;
-        }
-        rear++;
-        queue[rear] = element;
-        printf("%d enqueued to the queue.\n", element);
-    }
-}
-
-void displayQueue() {
-    if (isEmpty()) {
-        printf("Queue is empty.\n");
-    } else {
-        printf("Queue elements\n");
-        for (int i = front; i <= rear; i++) {
-            printf("%d\n", queue[i]);
-        }
-    }
-}
-
-int main() {
-
-    enqueue(10);
-    enqueue(20);
-    enqueue(30);
-
-    displayQueue();
-    dequeue(10);
-    displayQueue();
-    enqueue(40);
-    displayQueue();
-
-    return 0;
-}
-```
 Output:
 
-![exp no 13](https://github.com/user-attachments/assets/ce88345b-1b9f-433d-8812-dbda76495a00)
+![image](https://github.com/user-attachments/assets/5e8d9fe5-210f-483a-a0ff-a83891922346)
 
 
 Result:
@@ -282,66 +114,21 @@ Algorithm:
 4.	Call the enqueue function as needed.
 
 Program:
-```
-#include <stdio.h>
-#include <stdlib.h>
-
-#define MAX_SIZE 10 // Define the maximum size of the queue
-
-float queue[MAX_SIZE];
-int front = -1; 
-int rear = -1;  
-
-int isFull() {
-    return (rear == MAX_SIZE - 1);
+int size=4, rear=-1, front=-1; float queue[50];
+void enqueue(float data)
+{
+if(rear<size)
+{
+if(front==-1)
+{
+front=0;
 }
-
-int isEmpty() {
-    return (front == -1 && rear == -1);
+rear=rear+1; queue[rear]=data;
 }
-
-void enqueue(float element) {
-    if (isFull()) {
-        printf(" Queue is full.\n");
-    } else {
-        if (isEmpty()) {
-            front = 0;
-        }
-        rear++;
-        queue[rear] = element;
-        printf("%.1f enqueued to the queue.\n", element);
-    }
 }
-
-void displayQueue() {
-    if (isEmpty()) {
-        printf("Queue is empty.\n");
-    } else {
-        printf("Queue elements\n");
-        for (int i = front; i <= rear; i++) {
-            printf("%.1f\n", queue[i]);
-        }
-    }
-}
-
-int main() {
-
-    enqueue(10.5);
-    enqueue(20.5);
-    enqueue(30.5);
-
-    displayQueue();
-
-
-    enqueue(40.5);
-    displayQueue();
-
-    return 0;
-}
-```
 Output:
 
-![exp no 14](https://github.com/user-attachments/assets/9eb34f1a-b706-401a-8df4-a713478defc0)
+![image](https://github.com/user-attachments/assets/cf7a68ab-9c68-46af-bbd6-d43d0a14301b)
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -371,78 +158,22 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 
 
 Program:
-```
-#include <stdio.h>
-#include <stdlib.h>
-#define MAX_SIZE 10
-int queue[MAX_SIZE];
-int front = -1; 
-int rear = -1;  
 
-int isEmpty() {
-    return (front == -1 && rear == -1);
-}
-
-void enqueue(int element) {
-    if (rear == MAX_SIZE - 1) {
-        printf("Queue is full.\n");
-    } else {
-        if (front == -1) {
-            front = 0;
-        }
-        rear++;
-        queue[rear] = element;
-        printf("%d enqueued to the queue.\n", element);
+int front, rear;
+void dequeue()
+{
+    if(front==-1&&rear==-1)
+    printf("Queue Underflow.");
+    else if(front==rear)
+    front=rear=-1;
+    else{
+        front=front+1;
     }
 }
-
-int dequeue() {
-    if (isEmpty()) {
-        printf("Queue is empty.\n");
-        return -1; 
-    } else {
-        int dequeuedElement = queue[front];
-        printf("Deleting element: %d from the front of the queue.\n", dequeuedElement);
-        front++;
-        if (front > rear) {
-            front = rear = -1; 
-        }
-        return dequeuedElement;
-    }
-}
-
-void displayQueue() {
-    if (isEmpty()) {
-        printf("Queue is empty.\n");
-    } else {
-        printf("\nQueue elements\n");
-        for (int i = front; i <= rear; i++) {
-            printf("%d\n", queue[i]);
-        }
-    }
-}
-
-int main() {
-
-    enqueue(10);
-    enqueue(20);
-    enqueue(30);
-    displayQueue();
-    printf("\nDemonstrating Dequeue Operation:\n\n");
-    dequeue();
-    displayQueue();
-    dequeue();
-    dequeue();
-    displayQueue();
- 
-
-    return 0;
-}
-```
 Output:
 
-![exp no 15](https://github.com/user-attachments/assets/eaf5e211-5f32-427a-997d-89f599513dc0)
+![image](https://github.com/user-attachments/assets/77f30d41-a0c5-4af4-b1c6-51f1f1943621)
 
 
 Result:
-Thus, the function that deletes an element from a queue implemented using an array is verified successfully.
+Thus, the function that deletes an element from a queue implemented using an array is verified successfully.
