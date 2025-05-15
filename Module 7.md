@@ -16,29 +16,36 @@ Else
  
 Program:
 
-#include<stdio.h> 
-struct eligib
+#include<stdio.h> struct eligib
 {
-  int age; 
-  char n[4];
+int age; char n[4];
 };
 int main()
 {
-  struct eligib e; 
-  scanf("%d%s",&e.age,e.n);
+struct eligib e; scanf("%d%s",&e.age,e.n);
 if(e.age<=6)
 {
-  printf("Age:%d\nName:%svaccine:%d\neligibility:no",e.age,e.n,e.age);
+printf("Age:%d\nName:%svaccine:%d\neligibility:no",e.age,e.n,e.age);
 }
+
 else
 {
- printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
 }
+
+
+printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
+
+
 }
+
+
+
 
 Output:
+![Screenshot 2025-04-25 101725](https://github.com/user-attachments/assets/155efcc1-bf98-4d1d-8ca2-c15a4fa8ce36)
 
-![exp no 1](https://github.com/user-attachments/assets/65513bae-1bfc-4ddc-a7e4-b2db25201151)
+
+
 
 
 Result:
@@ -61,15 +68,14 @@ Algorithm:
  
 Program:
 
-#include<stdio.h> 
-struct numbers
+
+#include<stdio.h> struct numbers
 {
-int a; 
-int b;
+int a; int b;
 }n;
-int add(struct numbers n); 
-int main()
+int add(struct numbers n); int main()
 {
+
 scanf("%d %d ",&n.a,&n.b);
 printf("%d",add(n));
 }
@@ -80,10 +86,13 @@ return n.a+n.b;
 
 
 
+
+
 Output:
 
+![Screenshot 2025-04-25 101951](https://github.com/user-attachments/assets/d92333f8-4c0c-477d-88f0-493fff398f98)
 
-![exp no 2](https://github.com/user-attachments/assets/89892486-bcd4-4f7b-afe5-668c6d89318b)
+//paste your output here
 
 
 
@@ -117,25 +126,24 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-#include <stdio.h> 
-int main()
+#include <stdio.h> int main()
 {
 FILE *p;
-char name[30]; 
-scanf("%s",name);
-printf("%s File Created Successfully",name); 
-p=fopen("name","w");
-printf("\n%s File Opened",name); 
-fclose(p);
+char name[30]; scanf("%s",name);
+printf("%s File Created Successfully",name); p=fopen("name","w");
+printf("\n%s File Opened",name); fclose(p);
 printf("\n%s File Closed",name);
 }
 
 
 
+
+
 Output:
 
+![Screenshot 2025-04-25 102056](https://github.com/user-attachments/assets/86777047-2bf0-48f3-9231-5b7f2b3cfd5a)
 
-![exp no 3](https://github.com/user-attachments/assets/96b88d12-f014-4667-80ef-f3ef606c5661)
+//paste your output here
 
 
 
@@ -174,31 +182,28 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-#include <stdio.h> 
-int main()
+
+#include <stdio.h> int main()
 {
 FILE *p;
-char name[20]; 
-int num;
-char text[50]; 
-scanf("%s%d",name,&num); 
-p=fopen("name","w"); 
-printf("%s Opened",name); 
-for(int i=0;i<num;i++)
+char name[20]; int num;
+char text[50]; scanf("%s%d",name,&num); p=fopen("name","w"); printf("%s Opened",name); for(int i=0;i<num;i++)
 {
-scanf("%s",text); 
-fputs(text,p);
+scanf("%s",text); fputs(text,p);
 }
 printf("\nData added Successfully");
+
 }
+
 
 
 
 
 Output:
 
+![Screenshot 2025-04-25 102221](https://github.com/user-attachments/assets/cb11a376-3b48-4c22-81d9-ebe72582fcfc)
 
-![exp no 4](https://github.com/user-attachments/assets/dcdf5ad5-2253-42b9-8d00-8884945a49dc)
+//paste your output here
 
 
 
@@ -244,6 +249,7 @@ Algorithm:
 
 Program:
 
+
 #include <stdio.h>
 #include <stdlib.h>
 struct Subject
@@ -270,16 +276,20 @@ int main()
         printf("%s  %d\n",s[i].name,s[i].marks);
     }
     
-   free(s);
-   return 0;
+    free (s);
+    
+    return 0;
 }
 
 
 
+
+
 Output:
+![Screenshot 2025-04-25 102335](https://github.com/user-attachments/assets/ef5e799b-ae37-4a7d-8f66-43313c5e19f9)
 
 
-![exp no 5](https://github.com/user-attachments/assets/2e24ebe2-343f-4ff9-9bc0-6787f87d02b3)
+//paste your output here
 
 
 
@@ -287,4 +297,4 @@ Output:
 
 
 Result:
-Thus, the program is verified successfully
+Thus, the program is verified successfully
