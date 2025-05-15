@@ -1,5 +1,3 @@
-
-
 EXP NO:21 C PROGRAM TO CREATE A FUNCTION TO FIND THE GREATEST NUMBER
 Aim:
 To write a C program to create a function to find the greatest number
@@ -12,7 +10,6 @@ Algorithm:
 5.	Call the max_of_four function with the input integers and store the result in the greater variable
  
 Program:
-```
 #include<stdio.h>
 int max_of_four(int a,int b,int c,int d)
 {
@@ -35,14 +32,10 @@ return d;
 }
 int main()
 {
-int n1,n2,n3,n4,greater; 
-scanf("%d%d%d%d",&n1,&n2,&n3,&n4); 
-greater=max_of_four(n1,n2,n3,n4); 
-printf("\nThe greatest number is %d",greater);
+int n1,n2,n3,n4,greater; scanf("%d%d%d%d",&n1,&n2,&n3,&n4); greater=max_of_four(n1,n2,n3,n4); printf("%d",greater);
 }
-```
 Output:
-![exp no 21](https://github.com/user-attachments/assets/e59384a5-e869-413a-80fb-39283ea0f44e)
+![image](https://github.com/user-attachments/assets/f23917c1-76ce-4931-91f4-94aec4522818)
 
 Result:
 Thus, the program  that create a function to find the greatest number is verified successfully.
@@ -63,42 +56,35 @@ Algorithm:
 7.	Call the calculate_the_max function with input values.
  
 Program:
-```
-#include <stdio.h>
-
-void calculate_the_max(int n, int k) {
-    int a = 0, o = 0, x = 0;
-
-    for (int i = 1; i <= n; i++) {
-        for (int j = i + 1; j <= n; j++) {
-            if ((i & j) > a && (i & j) < k) {
-                a = i & j;
-            }
-            if ((i | j) > o && (i | j) < k) {
-                o = i | j;
-            }
-            if ((i ^ j) > x && (i ^ j) < k) {
-                x = i ^ j;
-            }
-        }
-    }
-
-    printf("Maximum (i & j) less than k = %d\n", a);
-    printf("Maximum (i | j) less than k = %d\n", o);
-    printf("Maximum (i ^ j) less than k = %d\n", x);
+#include<stdio.h>
+void calculate_the_max(int n,int k)
+{
+int a=0,o=0,x=0; for(int i=1;i<=n;i++)
+{
+for(int j=1+i;j<=n;j++)
+{
+if((i&j)>a && (i&j)<k)
+{
+a=i&j;
 }
-
-int main() {
-    int n, k;
-    printf("Enter two integers (n and k): ");
-    scanf("%d%d", &n, &k);
-
-    calculate_the_max(n, k);
-    return 0;
+if((i|j)>o && (i|j)<k)
+{
+o=i|j;
 }
-```
+if((i^j)>x && (i^j)<k)
+{
+x=i^j;
+}
+}
+}
+printf("%d\n%d\n%d\n",a,o,x);
+}
+int main()
+{
+int n,k; scanf("%d%d",&n,&k); calculate_the_max(n,k);
+}
 Output:
-![exp no 22](https://github.com/user-attachments/assets/fd48f3c5-08e3-4521-85bc-c3ef09de9d63)
+![image](https://github.com/user-attachments/assets/b83c86a8-ff3a-42f6-990b-834a3c6b3f52)
 
 Result:
 Thus, the program to print the maximum values for the AND, OR and XOR comparisons
@@ -118,49 +104,29 @@ Algorithm:
 5.	Use a for loop to iterate over the queries.
  
 Program:
-```
-#include <stdio.h>
-int main() {
-    int noshel, noque;
-    printf("Enter the number of shelves and number of queries: \n");
-    scanf("%d%d", &noshel, &noque);
-    int shelarr[noshel][1000];  
-    int nobookarr[noshel];      
-    for (int i = 0; i < noshel; i++) {
-        nobookarr[i] = 0;
-    }
-    for (int i = 0; i < noque; i++) {
-        int queno;
-        printf("Enter query type (1, 2, or 3): \n");
-        scanf("%d", &queno);
-        if (queno == 1) {
-            int shelno, nopage;
-            printf("Enter shelf number and number of pages for the book: \n");
-            scanf("%d%d", &shelno, &nopage);
-            int index = nobookarr[shelno];  
-            shelarr[shelno][index] = nopage;  
-            nobookarr[shelno]++;  
-            printf("Added book with %d pages to shelf %d\n", nopage, shelno);
-        }
-        else if (queno == 2) {
-            int pshelno, pbookno;
-            printf("Enter shelf number and book number to query pages: \n");
-            scanf("%d%d", &pshelno, &pbookno);
-            printf("Number of pages in book %d on shelf %d: %d\n", pbookno, pshelno, shelarr[pshelno][pbookno]);
-        }
-        else if (queno == 3) {
-            int ppshelno;
-            printf("Enter shelf number to query total number of books: \n");
-            scanf("%d", &ppshelno);
-            printf("Total number of books on shelf %d: %d\n", ppshelno, nobookarr[ppshelno]);
-        }
-    }
-
-    return 0;
+#include<stdio.h> int main()
+{
+int noshel,noque; scanf("%d%d",&noshel,&noque); int shelarr[noshel][noshel];
+int nobookarr[noshel]; int k=0,c=0;
+for(int i=0;i<noque;i++)
+{
+int queno; scanf("%d",&queno); if(queno==1)
+{
+int shelno,nopage; scanf("%d%d",&shelno,&nopage); shelarr[shelno][k]=nopage; nobookarr[shelno]=c+=1;
+k=k+1;
 }
-```
+else if(queno==2)
+{
+int pshelno,pbookno; scanf("%d%d",&pshelno,&pbookno); printf("%d",shelarr[pshelno][pbookno]);
+}
+else if(queno==3)
+{
+int ppshelno; scanf("%d",&ppshelno); printf("%d",nobookarr[ppshelno]);
+}
+}
+}
 Output:
-![exp no 23](https://github.com/user-attachments/assets/91c8a6ef-6682-4609-92f4-ee4466a1a7f6)
+![image](https://github.com/user-attachments/assets/b70fd821-471e-40c6-859c-2e36953fc5c5)
 
 
 Result:
@@ -184,28 +150,10 @@ Algorithm:
 
 
 Program:
-```
-#include<stdio.h>
+//type your code here
 
-int main() {
-    int n;
-    scanf("%d", &n);
-
-    int a[n];
-    int sum = 0;
-    printf("Enter the elements\n");
-    for(int i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
-        sum = sum + a[i];
-    }
-
-    printf("Sum of the elements: %d", sum);  
-
-    return 0;
-}
-```
 Output:
-![exp no 24](https://github.com/user-attachments/assets/fb124a5f-02a8-4f98-add7-1338896a8f6e)
+//paste your output here
 
  
 
@@ -236,7 +184,6 @@ o	If a character is not a space, it may belong to a word. If it's the first non-
 
 
 Program:
-```
 #include<stdio.h>
 #include<string.h>
 int main()
@@ -253,13 +200,12 @@ int main()
      printf("Total number of words in the string is :%d",count);
     return 0;
 }
-```
 Output:
-![exp no 25](https://github.com/user-attachments/assets/027997eb-1129-406f-961c-3d18863a73ce)
+![image](https://github.com/user-attachments/assets/c3ed8eea-8eb0-4d44-b7ff-c2e4a25bdbb1)
 
 
 
 Result:
 
-Thus, the program that counts the number of words in a given sentence is verified 
+Thus, the program that counts the number of words in a given sentence is verified 
 successfully.
